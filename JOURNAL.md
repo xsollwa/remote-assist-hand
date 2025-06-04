@@ -25,3 +25,8 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 
 - We chose the mechanical parts such as the stepper and servo motors to drive the arm based on power requirements. We also chose our microcontroller allowing for Wi-Fi connectivity using an Arduino model for familiarity. Added these components to the Material and Budget file listing their prices and linking to possible vendors.
+
+### June 4, 2025 - 1 hours
+
+**What we did:**
+- We began sketching out the CAD design on paper, dimensioning out the arms and making sure our servos can support the torque provided by the weight of the arm. This should allow for easier CADing in the future and smooth operation of the arm.
