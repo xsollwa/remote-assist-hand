@@ -1,8 +1,8 @@
 ---
-title: "Remote Assist Surgical Hand"
-authors: "Ruzanna Gaboyan and Philip Golczak"
-description: "For this project we are creating a robotic arm with a gripper hand which will be controlled by joystick and pneumatic haptic feedback system"
-created_at: "2025-05-28"
+Title: "Remote Assist Surgical Hand"
+Authors: "Ruzanna Gaboyan and Philip Golczak"
+Description: "For this project we are creating a robotic arm with a gripper hand which will be controlled by joystick and pneumatic haptic feedback system"
+Created_At: "2025-05-28"
 ---
 ### May 27, 2025 - 2 hours
 
@@ -17,3 +17,11 @@ https://www.instructables.com/remote-controlled-robotic-arm/
 - Here is a useful video that we watched which was also about building robotic arms:
 https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 (The robotic arm in this video is pretty big but ours will be smaller) 
+
+### June 3, 2025 - 4 hours
+
+**What we did:**
+- We set up Visual Studio Code Git extension and cloned the project repository to our computers. We did this to make the workflow smoother since we plan to write the C code for our Arduinos in Visual Studio Code.
+
+
+- We chose the mechanical parts such as the stepper and servo motors to drive the arm based on power requirements. We also chose our microcontroller allowing for Wi-Fi connectivity using an Arduino model for familiarity. Added these components to the Material and Budget file listing their prices and linking to possible vendors.
