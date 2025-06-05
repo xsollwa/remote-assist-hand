@@ -29,4 +29,6 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 ### June 4, 2025 - 1 hours
 
 **What we did:**
-- We began sketching out the CAD design on paper, dimensioning out the arms and making sure our servos can support the torque provided by the weight of the arm. This should allow for easier CADing in the future and smooth operation of the arm.
+-  We met to brainstorm and discuss the physical design of the robotic arm, more specifically the size of the robot, and how the CAD and PCB would look like. We came up with a design that would be slightly smaller than real human arm because of the strength and size of the motors we are planning to use.
+  
+-  We began sketching out the CAD design on paper, dimensioning out the arms and making sure our servos can support the torque provided by the weight of the arm. This should allow for easier CADing in the future and smooth operation of the arm.
