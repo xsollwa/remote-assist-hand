@@ -43,6 +43,7 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 ### June 6, 2025 - 2 hours
 
 **What we did**
+
 *Ruzanna*
 - Today I created the first detailed drawing of our robotic arm design. The goal was to visualise how each component would physically fit together; it includes labeling of all of the parts that will go into building the arm (servo motors M1-M4, stepper motor Mst, gripper, load cell L1, amplifier A1, ESP32, MPX5010DP with its tube, and LiPo battery). Here is the first sketch!
 <img src="https://github.com/user-attachments/assets/4dbc0d04-b3fb-48dc-8837-c5d36a8fc502" width="400"/>
