@@ -3,7 +3,7 @@
 
 | Part Number | Part Name                     | Description                       | Unit Price | Total Price |
 | :---------- | :---------------------------: | :-------------------------------: | :--------: | ----------: |
-| MP1         | ESP32                         | [Wi-Fi Microprocessor][1]         | $26        | $52         |
+| MP1         | ESP32                         | [Wi-Fi Microprocessor][1]         | $10        | $10         |
 | B1          | Urgenex Lipo Battery (2x)     | [Battery for Arm and Remote][2]   | $27        | $27         |
 | M1          | Digital Servo Motor (4x)      | [Servos for Joints][3]            | $45        | $45         |
 | M2          | Stepper Motor                 | [Stepper for Base][4]             | $13        | $13         |
