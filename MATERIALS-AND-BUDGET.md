@@ -3,7 +3,7 @@
 
 | Part Number | Part Name                     | Description                       | Unit Price | Total Price |
 | :---------- | :---------------------------: | :-------------------------------: | :--------: | ----------: |
-| MP1         | Arduino Nano 33 IoT           | [Wi-Fi Microprocessor][1]         | $26        | $52         |
+| MP1         | ESP32                         | [Wi-Fi Microprocessor][1]         | $26        | $52         |
 | B1          | Urgenex Lipo Battery (2x)     | [Battery for Arm and Remote][2]   | $27        | $27         |
 | M1          | Digital Servo Motor (4x)      | [Servos for Joints][3]            | $45        | $45         |
 | M2          | Stepper Motor                 | [Stepper for Base][4]             | $13        | $13         |
@@ -11,7 +11,7 @@
 | A1          | Amplifier (4x)                | [Amplifier for Load Cell][5]      | $7         | $7          |
 | D1          | Stepper Driver (3x)           | [Driver for Stepper][5]           | $8         | $8          |
 
-[1]: https://www.amazon.com/Arduino-Nano-IoT-headers-Mounted/dp/B07WPFQZQ1/ref=sr_1_1_sspa?crid=2CJ0715P8VEF9&dib=eyJ2IjoiMSJ9.qvKvdv5D9Ep7r4iVDg0v0nFnYKJ9dmjM11QZQni0Etw2iBGn82hiq2AYDKgpFByHtOwJCkkht3FzxXiD31wIM2jbEXJIINsZP_SJMzLwJ8Pn-cxeJqHHvpx70EWZVrMXgoWjlxzCgoIwpKkp7SjesXAtMEPxdNOqp4zJaCrukgnIXxP9N1FpGBx5soKyLa_KoS3tzJxowR3rxTApbMGKnF1nr0LaFJ8YETFlBWSVDNY.bSKhLC4KYWIVAFRNhYhze4dsBGnEhgD3_H15mq4mBcE&dib_tag=se&keywords=arduino+nano+33&qid=1748988495&sprefix=ardiuno+nano+33%2Caps%2C105&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1
+[1]: https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/ref=sr_1_7?crid=3215NDM97THDZ&dib=eyJ2IjoiMSJ9.XBINg-sjhfF_gUtnMiKGjhlE-f5AuPRamTr33nRxSXkGLv_o48kwC8Ijeis6JInJV0KyHBRH7xGJQ-1txsZL4_5QVucvaXvokYACu1kJYTispfjw86LMs4pUaEb3QBf2tCHnMbfhxKmN1GqPyMwCe0JXg3RkQWr3XzxjTqvRC2Vi1yxUnR4MgBHJZC4l4B3sckUL9U6HKhcOjM0hclVNu3VH8A-i1EauSL7KfuJcGiQ.nLKf6GH-ppYlGRm2A-K7bqKU-ETPi6PvqRFLruHjBsE&dib_tag=se&keywords=esp+32&qid=1749497283&sprefix=esp+%2Caps%2C96&sr=8-7
 
 [2]: https://www.amazon.com/URGENEX-Battery-1800mAh-Rechargeable-Campatibal/dp/B0924MM61Z/ref=sxin_17_sbv_search_btf?content-id=amzn1.sym.8aea4788-5372-43c5-bde7-3d239eb02a51%3Aamzn1.sym.8aea4788-5372-43c5-bde7-3d239eb02a51&crid=3Q08CKQ0G2YS0&cv_ct_cx=2s+lipo&keywords=2s+lipo&pd_rd_i=B0924MM61Z&pd_rd_r=2fee5f48-be65-4bef-8665-56cf135858b5&pd_rd_w=GqGDQ&pd_rd_wg=o6vhg&pf_rd_p=8aea4788-5372-43c5-bde7-3d239eb02a51&pf_rd_r=TBJT25WAE9YMH6TNV576&qid=1748989214&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=2s+lipo%2Caps%2C112&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776
 
