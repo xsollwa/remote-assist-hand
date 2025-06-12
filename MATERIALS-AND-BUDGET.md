@@ -10,6 +10,9 @@
 | L1          | Load Cell                     | [Load Cell for Grasper][5]        | $12        | $12         |
 | A1          | Amplifier (4x)                | [Amplifier for Load Cell][6]      | $7         | $7          |
 | D1          | Stepper Driver (3x)           | [Driver for Stepper][7]           | $8         | $8          |
+| C1          | Hex Coupler 5mm (4x)          | [Hex Coupler for Base][8]         | $8         | $8          |
+| T1          | Threaded Inserts 4mm (100x)   | [Threaded Inserts for Arm][9]     | $10        | $10         |
+| BC1         | Buck Converter 4mm (2x)       | [Buck Converter for 7.4-5v][10]   | $8         | $8          |
 
 [1]: https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/ref=sr_1_7?crid=3215NDM97THDZ&dib=eyJ2IjoiMSJ9.XBINg-sjhfF_gUtnMiKGjhlE-f5AuPRamTr33nRxSXkGLv_o48kwC8Ijeis6JInJV0KyHBRH7xGJQ-1txsZL4_5QVucvaXvokYACu1kJYTispfjw86LMs4pUaEb3QBf2tCHnMbfhxKmN1GqPyMwCe0JXg3RkQWr3XzxjTqvRC2Vi1yxUnR4MgBHJZC4l4B3sckUL9U6HKhcOjM0hclVNu3VH8A-i1EauSL7KfuJcGiQ.nLKf6GH-ppYlGRm2A-K7bqKU-ETPi6PvqRFLruHjBsE&dib_tag=se&keywords=esp+32&qid=1749497283&sprefix=esp+%2Caps%2C96&sr=8-7
 
@@ -24,3 +27,9 @@
 [6]: https://www.amazon.com/WWZMDiB-HX711-Amplifier-Displacement-Acceleration/dp/B0BLND4VF6/ref=sr_1_3?crid=3FCALBMD1NR0E&dib=eyJ2IjoiMSJ9.eiLmQONt8tFAyUMm-av_6RdCsR0ZVS6cJHb3ab0ccsjR7oUrIqa-VHcLN3xcpOBlpc_08WHh62HHxlddYW1rA7AGZePv1Cyp0q7kvRdA575RbT9tRyBD8S_x9a3K1TIBK4OgxY_OloVaStxeZeWM9P9lfdVwri_Ek0AVYYuIfkR_euvRR2siY9ns1faktgc_zx-CT5MLj_ikhGnw8v33mKswr2r0VuugJpcO1_d13_8.eypDpwmpp6q0xhYlaQGg9oeoRt-guQy3EfPsYo_eLn4&dib_tag=se&keywords=load+cell+amplifier&qid=1749149193&sprefix=load+cell+amplifier%2Caps%2C103&sr=8-3
 
 [7]: https://www.amazon.com/WWZMDiB-Stepstick-Stepper-Printer-Suitable/dp/B0BFQZWT6R/ref=sr_1_13?crid=3RVK8J66P0VYW&dib=eyJ2IjoiMSJ9.S3VjKfGcCiwNSTXBu7tAhHANgI7IT5tMpRzke8Y_UGA45Q0cmTps8iDc5MYrb7OAB1BuIV3-ckwB_1tW61WLv75lK1qriRV_gCtyF8pK9AAigJ4T8KIgMD-lC6rjFR3vqUPIYj-krOmZSAoc4195flDYsN-LHi0lqnITOSGF0FtA9IkSMC34aQSZkxVQLKAUyfdankYcJSQyb52NpO_MOIe67VMMmMAIz6wi56Zj7jM.ql0iLZTvuvilgX5DbTH-PhOZY2qf9PCNg652MDi5t1U&dib_tag=se&keywords=stepper%2Bmotor%2Bdriver&qid=1749149399&sprefix=stepper%2Bmotor%2B%2Caps%2C109&sr=8-13&th=1
+
+[8]: https://www.amazon.com/uxcell-Coupler-Coupling-Connector-Wheels/dp/B08M379TCT/ref=sr_1_3?crid=2NI5R9L70ANGS&dib=eyJ2IjoiMSJ9.kREQIRc-yoHDO809lQhudfKU49fcw3VGYy6XX8GBcoml01Yc6pcpW18aygFuzty-3JkjVgRCWnsnUluZOcFF7DWUYlbC61-76O4XxyIJxm8kKEHA8KpnP3QtSJ__uo_6MhLSX8DJRXSijKjPKo32FAlgUkGWMF3r5ozkvdE-hNpI68fUXJ1kKNpRGfH-BTgWqnWBxH0pqqZvQmurcEXNmEQ-cw9RV47iP3Yim_MCSbz3pCw_1rei_3tTU-agr2LSjWUNB1eK0vXPidK_nHUSRDkMLiubl59YmnVboFk73k8.DEPGpLJoM_TEDqWvkzBwgolyDYY_VbsG9Z_xcY1JYyk&dib_tag=se&keywords=5mm%2Bshaft%2Bhex%2Badapter&qid=1749745924&sprefix=5mm%2Bshaft%2Bhex%2Badapte%2Caps%2C94&sr=8-3&th=1
+
+[9]: https://www.amazon.com/HANGLIFE-Heat-Set-Threaded-Printing-Components/dp/B0CS6XGMFD/ref=sr_1_3?crid=PVU86WNJN8K3&dib=eyJ2IjoiMSJ9.mB9ah2DA1qODSy-KL_pRCQWxCkecQxuEGXX9mJTJKCUJMGp9myJf9McuydE0AnN8f4EKIGs1Q8q3M8ieEczTGdJ13JbRxSiQE2sLb1ek7ToxczyKeuNZ-4xtx7_Nkmf0hIfnjSWSdG_xlNtZ1DsZAI_y9vv3TrZzWsA0HXoQq3P9OFhXKtfXvLXLGkaHfN0IIJXw0MS5Ue0_xa5BlGvw0y-H1F4ClSGtFm30JwdPwWs.lnuZpXlqxKO7YUl6IQ5QYgLlQsRhRtVeCl3jy4BCWn4&dib_tag=se&keywords=4m%2Bthreaded%2Binserts&qid=1749758810&sprefix=4m%2Bthreaded%2Binserts%2Caps%2C110&sr=8-3&th=1
+
+[10]: https://www.amazon.com/Maxmoral-Converter-Adjustable-Step-Down-Regulator/dp/B07MKQXNWG/ref=sr_1_8?crid=2O8Z0895WHHXP&dib=eyJ2IjoiMSJ9.Mn8RJg1NDqimTO87a_6HSzNLUgHkiPZ-VHvhyk_sEEX959uBLCpsnr1INDbSWpDKHzBUeE-YTWH4jJPt8yN_66qJGG0LMLLCtm2hUaRa0Z7giRo_BbYZ43KzK8a0ZkmFgm1_7exLw-T5nEHN_xsRLts72GEUkHbbKW-mQhQgRSSwipKjFBaNXV0R6c9MMWTGuIFDt9opV19PQrMrfOmi0de15Fu1fMhiF38ZXDObWWI.BWYEDRp61inwdzt085fWsmer4meqyVfUpvTSosCXECM&dib_tag=se&keywords=buck+converter+7.4v+to+5v&qid=1749758952&sprefix=buck+converter+7.4%2Caps%2C125&sr=8-8
