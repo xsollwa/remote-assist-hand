@@ -52,7 +52,20 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - After sharing the design with Philip we discussed how feasible it is and how the pressure feedback system should work. Originally I drew in MPX5010DP with a tube to register pressure, but we ended up coming up with a better way. We agreed to measure haptic feedback electrically through a load cell L1 which measures the amount of bending force applied by the gripper. So, I revised my drawing to its second version by removing the air pressure tube with the MPX5010DP sensor , and included a pressure display on the arm to show live force readings using the load cell. Here is the revised version of the sketch:
 <img src="https://github.com/user-attachments/assets/462d2d55-8ac4-4f91-93e1-b3f4d70fbe19" width="400"/>
 
+### June 11, 2025 - 4 hours
 
+**What we did**
+
+*Philip*
+- Today, I worked on fleshing out many of the ideas Ruzanna and I had previously discussed by CADing out some of the significant parts of the arm. I started by importing models of the stepper and servo motors we would be using, then CADing out the load cell as well as the Hex adapter, which would allow for 360-degree rotation. Next, I designed the stationary base, as well as the component for storing various electronics, including the PCB and stepper motor. These parts are denoted by the color blue, as we will 3D print them to construct the arm.
+
+- Tomorrow, I plan to create the PCB design for the arm, which will enable me to scale the arm more effectively and continue refining the current parts that I will be printing. I am attaching images of my CAD progress thus far.
+<img src="image-1.png" width="400"/>
+<img src="image-2.png" width="400"/>
+
+- The top image shows the stationary base, while the bottom represents the electronics casing, which will sit on top of it, supported by the hex adapter and stepper motor shaft.
+
+- I also conitnued to form on the BOM and will be adding these updates tomorrow as I finish CADing.
 
 
   

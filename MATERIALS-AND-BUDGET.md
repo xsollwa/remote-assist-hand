@@ -8,8 +8,8 @@
 | M1          | Digital Servo Motor (4x)      | [Servos for Joints][3]            | $45        | $45         |
 | M2          | Stepper Motor                 | [Stepper for Base][4]             | $13        | $13         |
 | L1          | Load Cell                     | [Load Cell for Grasper][5]        | $12        | $12         |
-| A1          | Amplifier (4x)                | [Amplifier for Load Cell][5]      | $7         | $7          |
-| D1          | Stepper Driver (3x)           | [Driver for Stepper][5]           | $8         | $8          |
+| A1          | Amplifier (4x)                | [Amplifier for Load Cell][6]      | $7         | $7          |
+| D1          | Stepper Driver (3x)           | [Driver for Stepper][7]           | $8         | $8          |
 
 [1]: https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/ref=sr_1_7?crid=3215NDM97THDZ&dib=eyJ2IjoiMSJ9.XBINg-sjhfF_gUtnMiKGjhlE-f5AuPRamTr33nRxSXkGLv_o48kwC8Ijeis6JInJV0KyHBRH7xGJQ-1txsZL4_5QVucvaXvokYACu1kJYTispfjw86LMs4pUaEb3QBf2tCHnMbfhxKmN1GqPyMwCe0JXg3RkQWr3XzxjTqvRC2Vi1yxUnR4MgBHJZC4l4B3sckUL9U6HKhcOjM0hclVNu3VH8A-i1EauSL7KfuJcGiQ.nLKf6GH-ppYlGRm2A-K7bqKU-ETPi6PvqRFLruHjBsE&dib_tag=se&keywords=esp+32&qid=1749497283&sprefix=esp+%2Caps%2C96&sr=8-7
 
