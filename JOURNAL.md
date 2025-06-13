@@ -60,8 +60,8 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - Today, I worked on fleshing out many of the ideas Ruzanna and I had previously discussed by CADing out some of the significant parts of the arm. I started by importing models of the stepper and servo motors we would be using, then CADing out the load cell as well as the Hex adapter, which would allow for 360-degree rotation. Next, I designed the stationary base, as well as the component for storing various electronics, including the PCB and stepper motor. These parts are denoted by the color blue, as we will 3D print them to construct the arm.
 
 - Tomorrow, I plan to create the PCB design for the arm, which will enable me to scale the arm more effectively and continue refining the current parts that I will be printing. I am attaching images of my CAD progress thus far.
-<img src="Images/image-1.png" width="400"/>
-<img src="Images/image-2.png" width="400"/>
+<img src="Images/Original_Base.png" width="400"/>
+<img src="Images/Electronics_Casing.png" width="400"/>
 
 - The top image shows the stationary base, while the bottom represents the electronics casing, which will sit on top of it, supported by the hex adapter and stepper motor shaft.
 
@@ -73,7 +73,7 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 *Philip*
 - Today, I continued working on the CAD, mainly changing the base so that the legs can be printed separately from the base center. This change was to allow for the printing of these parts, as the combined model would not have fit on my 3D printer otherwise. Additionally, this will enable me to scale them to larger sizes if needed. Below is a picture of the new parts.
-<img src="Images/image-3.png" width="400"/>
+<img src="Images/Base_Arm.png" width="400"/>
 <img src="Images/Base_Center.png" width="400"/>
 
 - The bulk of my work today was spent on KiCAD. Today was my first time using the software. Thus, I spent a considerable amount of time learning how to use it. However, I was able to create my wiring diagram and start my actual PCB design. Below is a picture of my complete wiring diagram.
