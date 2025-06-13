@@ -67,7 +67,7 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 - I also conitnued to form on the BOM and will be adding these updates tomorrow as I finish CADing.
 
-### June 11, 2025 - 7 hours
+### June 12, 2025 - 7 hours
 
 **What we did**
 
@@ -79,4 +79,15 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - The bulk of my work today was spent on KiCAD. Today was my first time using the software. Thus, I spent a considerable amount of time learning how to use it. However, I was able to create my wiring diagram and start my actual PCB design. Below is a picture of my complete wiring diagram.
 <img src="Images/Arm_Wiring.png" width="400"/>
 
-  
+### June 13, 2025 - 5 hours
+
+**What we did**
+
+*Philip*
+- I continued to refine my wiring diagram in KiCAD. I was able to complete both tasks, fully optimizing the PCB design for the smallest size while ensuring all the proper electrical connections were made. A part of this design process that took me a while to figure out was creating different nets, which I used to make the connections between my battery and other high-power connections thicker and make those connections as short as possible to reduce voltage drop. Below are pictures of both my complete wiring diagram and PCB design.
+<img src="Images/Arm_Wiring_Final.png" width="400"/>
+<img src="Images/PCB_Design.png" width="400"/>
+
+- Next, I imported the 3D model of my PCB into OnShape. I refined my Electrical Casing Design, as well as the base, to allow for the proper amount of space to fit all the electrical components. This resizing included the base center to accommodate the new, enlarged size. Below is an image of the new casing.
+<img src="Images/Electronics_Casing_V2.png" width="400"/>
+
