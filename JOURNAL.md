@@ -91,3 +91,9 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - Next, I imported the 3D model of my PCB into OnShape. I refined my Electrical Casing Design, as well as the base, to allow for the proper amount of space to fit all the electrical components. This resizing included the base center to accommodate the new, enlarged size. Below is an image of the new casing.
 <img src="Images/Electronics_Casing_V2.png" width="400"/>
 
+### June 15, 2025 - 1 hour
+
+**What we did**
+
+*Ruzanna*
+- Today I completed the [README.md](./README.md) file of this project. In the README I covered the overview of the project, its key features, components, work process, build process and included links to important files such as the MATERIALS-AND-BUDGET.md and JOURNAL.md.
