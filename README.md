@@ -40,6 +40,7 @@ You can also view our full Bill of Materials [here](./MATERIALS-AND-BUDGET.md)
 2) PCB Design using KiCAD 
 3) CAD Modeling using OnShape
 4) Revision and Optimization
+5) Assembly and testing
 
 ## Journal
 Our full development journal can be found [here](./JOURNAL.md)
