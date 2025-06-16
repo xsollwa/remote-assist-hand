@@ -60,6 +60,15 @@ The **Remote Assist Hand** is a robotic arm with a gripping hand that is able to
 3) ESP32 **sends the data to a computer** in real time,
 4) The computer **displays the pressure**, helping the user understand how hard the robot is gripping.
 
+## Pictures 
+**PCB**
+![Arm_Wiring_Final](https://github.com/user-attachments/assets/9379291f-6b8c-433a-b20c-c8ec4d568c69)
+![PCB_Design](https://github.com/user-attachments/assets/dcc73f29-8f13-4395-a946-47fc506b1dbe)
+
+**3D model**
+
+
+
 ## Building Process
 1) Brainstorming and sketching
 2) PCB Design using KiCAD 
