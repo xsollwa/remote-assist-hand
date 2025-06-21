@@ -140,3 +140,15 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 
 
+### June 15, 2025 - 2 hour
+
+**What we did**
+
+*Ruzanna*
+- Today I completed the [README.md](./README.md) file of this project. In the README I covered the overview of the project, its key features, components, work process, build process and included links to important files such as the MATERIALS-AND-BUDGET.md and JOURNAL.md.
+  
+- After, I visited the highway website to make sure the project meets submission requirements. I had to make some changes in the README, convert the Bill of Materials to csv format and upload PCB source files. I also ensured that the project repository looks organised.
+
+- Lastly I continued to improve my 3D model. First I found and downloaded the .step files of most of the parts that we are going to use, then imported the electronics into the assembly file and tried to put everything together. It is my first time creating a full assembly using OnShape, so it takes a lot of time. Here is where I am at:
+![image](https://github.com/user-attachments/assets/c9b2598e-b947-43f5-a808-78d3188ec3da)
+
