@@ -60,8 +60,8 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - Today, I worked on fleshing out many of the ideas Ruzanna and I had previously discussed by CADing out some of the significant parts of the arm. I started by importing models of the stepper and servo motors we would be using, then CADing out the load cell as well as the Hex adapter, which would allow for 360-degree rotation. Next, I designed the stationary base, as well as the component for storing various electronics, including the PCB and stepper motor. These parts are denoted by the color blue, as we will 3D print them to construct the arm.
 
 - Tomorrow, I plan to create the PCB design for the arm, which will enable me to scale the arm more effectively and continue refining the current parts that I will be printing. I am attaching images of my CAD progress thus far.
-<img src="Images/Original_Base.png" width="400"/>
-<img src="Images/Electronics_Casing.png" width="400"/>
+<img src="Progress Images/Original_Base.png" width="400"/>
+<img src="Progress Images/Electronics_Casing.png" width="400"/>
 
 - The top image shows the stationary base, while the bottom represents the electronics casing, which will sit on top of it, supported by the hex adapter and stepper motor shaft.
 
@@ -73,11 +73,11 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 *Philip*
 - Today, I continued working on the CAD, mainly changing the base so that the legs can be printed separately from the base center. This change was to allow for the printing of these parts, as the combined model would not have fit on my 3D printer otherwise. Additionally, this will enable me to scale them to larger sizes if needed. Below is a picture of the new parts.
-<img src="Images/Base_Arm.png" width="400"/>
-<img src="Images/Base_Center.png" width="400"/>
+<img src="Progress Images/Base_Arm.png" width="400"/>
+<img src="Progress Images/Base_Center.png" width="400"/>
 
 - The bulk of my work today was spent on KiCAD. Today was my first time using the software. Thus, I spent a considerable amount of time learning how to use it. However, I was able to create my wiring diagram and start my actual PCB design. Below is a picture of my complete wiring diagram.
-<img src="Images/Arm_Wiring.png" width="400"/>
+<img src="Progress Images/Arm_Wiring.png" width="400"/>
 
 ### June 13, 2025 - 5 hours
 
@@ -85,9 +85,58 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 *Philip*
 - I continued to refine my wiring diagram in KiCAD. I was able to complete both tasks, fully optimizing the PCB design for the smallest size while ensuring all the proper electrical connections were made. A part of this design process that took me a while to figure out was creating different nets, which I used to make the connections between my battery and other high-power connections thicker and make those connections as short as possible to reduce voltage drop. Below are pictures of both my complete wiring diagram and PCB design.
-<img src="Images/Arm_Wiring_Final.png" width="400"/>
-<img src="Images/PCB_Design.png" width="400"/>
+<img src="Progress Images/Arm_Wiring_Final.png" width="400"/>
+<img src="Progress Images/PCB_Design.png" width="400"/>
 
 - Next, I imported the 3D model of my PCB into OnShape. I refined my Electrical Casing Design, as well as the base, to allow for the proper amount of space to fit all the electrical components. This resizing included the base center to accommodate the new, enlarged size. Below is an image of the new casing.
-<img src="Images/Electronics_Casing_V2.png" width="400"/>
+<img src="Progress Images/Electronics_Casing_V2.png" width="400"/>
+
+### June 14, 2025 - 5 hours
+
+**What we did**
+
+*Philip*
+- I continued working on the Electronics Case, notably adding a panel to access the ESP32 while the lid was screwed on, allowing for easy programming. Additionally, I added a hole for a switch that will enable me to turn off the power from outside the case, even when the lid is screwed on, which protects my programming device from high voltage. Next, I added the lid to hold both the first servo motor and allow for wiring to exit the arm. It also features an additional hole for a screw and nut, providing extra support for the arm. Below are pictures of the new case, panel, and lid.
+<img src="Progress Images/Electronics_Casing_V3.png" width="400"/>
+<img src="Progress Images/Electronics_Casing_Panel.png" width="400"/>
+<img src="Progress Images/Electronics_Casing_Lid.png" width="400"/>
+
+### June 15, 2025 - 4 hours
+
+**What we did**
+
+*Philip*
+- I shifted my attention to the upper arm area of the robot, CADing out both the male and female halves to ensure the servo motor fit snugly within them. These halves will be held together by M4 screws and threaded inserts and attached to the servo motor. Below are pictures of both of these parts.
+<img src="Progress Images/Upper_Arm_Female.png" width="400"/>
+<img src="Progress Images/Upper_Arm_Male.png" width="400"/>
+
+### June 16, 2025 - 2 hours
+
+**What we did**
+
+*Philip*
+- Today, I moved on to what will be the forearm of the robot, once again CADing both the male and female components and finding a suitable location for the servo motor that will power the wrist joint while ensuring the design has sufficient space for any necessary wiring. Below are images of the two parts.
+<img src="Progress Images/Forearm_Female.png" width="400"/>
+<img src="Progress Images/Forearm_Male.png" width="400"/>
+
+### June 18, 2025 - 5 hours
+
+**What we did**
+
+*Philip*
+- Today, I designed the wrist joint in CAD, which will hold the 4th and final stepper motor for the claw. This design should not have taken me as long as it did. Still, I was determined not only to ensure the stepper fit well but also to make the design appear polished and sleek while maintaining proper tolerances on these parts and, once again, allowing for room for any wiring. I also made sure to consider how the parts would be installed so that the construction would be easy. Below are images of the two parts of the wrist for both females and males.
+<img src="Progress Images/Wrist_Female.png" width="400"/>
+<img src="Progress Images/Wrist_Male.png" width="400"/>
+
+### June 18, 2025 - 5 hours
+
+**What we did**
+
+*Philip*
+- Today was my final day of designing the CAD model; I finished completing the models of the upper and lower claws and finally assembled all the pieces into one. I learned a lot about effective ways to create CAD models of very different shapes, as well as what it means to design a project in CAD from start to finish. While I enjoyed this process, after pouring so many hours into it, I am glad to be done. Below are images of both pieces of the claw as well as the whole assembly.
+<img src="Progress Images/Claw_Top.png" width="400"/>
+<img src="Progress Images/Claw_Bottom.png" width="400"/>
+<img src="Progress Images/Arm_Assembly.png" width="400"/>
+
+
 
