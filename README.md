@@ -72,8 +72,8 @@ The **Remote Assist Hand** is a robotic arm with a gripping hand that is able to
 ![PCB_Design](https://github.com/user-attachments/assets/dcc73f29-8f13-4395-a946-47fc506b1dbe)
 
 **3D model**
-
-
+![alt text](CAD/Images/Arm_Isometic_View.png)
+![alt text](CAD/Images/Arm_Side_View.png)
 
 ## Building Process
 1) Brainstorming and sketching
