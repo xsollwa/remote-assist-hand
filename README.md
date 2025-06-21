@@ -33,6 +33,7 @@ The **Remote Assist Hand** is a robotic arm with a gripping hand that is able to
 | L1          | 5v Voltage Regulator (25x)    | [Voltage Regulator for ESP32][11]   | $8         | $8          |
 | PCB1        | Printed Circuit Board         | [PCB for Electrical Components][12] | ~$10       | ~$10        |
 | S1          | Boat Rocker Switch            | [Power Switch][13]                  | $5         | $5          |
+| TOT         | Total (Excluding taxes, shipping and fees)         |               |            | $171        |
 
 [1]: https://www.amazon.com/HiLetgo-ESP-WROOM-32-Development-Microcontroller-Integrated/dp/B0718T232Z/ref=sr_1_7?crid=3215NDM97THDZ&dib=eyJ2IjoiMSJ9.XBINg-sjhfF_gUtnMiKGjhlE-f5AuPRamTr33nRxSXkGLv_o48kwC8Ijeis6JInJV0KyHBRH7xGJQ-1txsZL4_5QVucvaXvokYACu1kJYTispfjw86LMs4pUaEb3QBf2tCHnMbfhxKmN1GqPyMwCe0JXg3RkQWr3XzxjTqvRC2Vi1yxUnR4MgBHJZC4l4B3sckUL9U6HKhcOjM0hclVNu3VH8A-i1EauSL7KfuJcGiQ.nLKf6GH-ppYlGRm2A-K7bqKU-ETPi6PvqRFLruHjBsE&dib_tag=se&keywords=esp+32&qid=1749497283&sprefix=esp+%2Caps%2C96&sr=8-7
 
