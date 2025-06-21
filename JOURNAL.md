@@ -105,6 +105,14 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 
 **What we did**
 
+*Ruzanna*
+- Today I completed the [README.md](./README.md) file of this project. In the README I covered the overview of the project, its key features, components, work process, build process and included links to important files such as the MATERIALS-AND-BUDGET.md and JOURNAL.md.
+  
+- After, I visited the highway website to make sure the project meets submission requirements. I had to make some changes in the README, convert the Bill of Materials to csv format and upload PCB source files. I also ensured that the project repository looks organised.
+
+- Lastly I continued to improve my 3D model. First I found and downloaded the .step files of most of the parts that we are going to use, then imported the electronics into the assembly file and tried to put everything together. It is my first time creating a full assembly using OnShape, so it takes a lot of time. Here is where I am at:
+![image](https://github.com/user-attachments/assets/c9b2598e-b947-43f5-a808-78d3188ec3da)
+
 *Philip*
 - I shifted my attention to the upper arm area of the robot, CADing out both the male and female halves to ensure the servo motor fit snugly within them. These halves will be held together by M4 screws and threaded inserts and attached to the servo motor. Below are pictures of both of these parts.
 <img src="Progress Images/Upper_Arm_Female.png" width="400"/>
@@ -128,7 +136,7 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 <img src="Progress Images/Wrist_Female.png" width="400"/>
 <img src="Progress Images/Wrist_Male.png" width="400"/>
 
-### June 18, 2025 - 5 hours
+### June 20, 2025 - 5 hours
 
 **What we did**
 
@@ -137,18 +145,4 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 <img src="Progress Images/Claw_Top.png" width="400"/>
 <img src="Progress Images/Claw_Bottom.png" width="400"/>
 <img src="Progress Images/Arm_Assembly.png" width="400"/>
-
-
-
-### June 15, 2025 - 2 hour
-
-**What we did**
-
-*Ruzanna*
-- Today I completed the [README.md](./README.md) file of this project. In the README I covered the overview of the project, its key features, components, work process, build process and included links to important files such as the MATERIALS-AND-BUDGET.md and JOURNAL.md.
-  
-- After, I visited the highway website to make sure the project meets submission requirements. I had to make some changes in the README, convert the Bill of Materials to csv format and upload PCB source files. I also ensured that the project repository looks organised.
-
-- Lastly I continued to improve my 3D model. First I found and downloaded the .step files of most of the parts that we are going to use, then imported the electronics into the assembly file and tried to put everything together. It is my first time creating a full assembly using OnShape, so it takes a lot of time. Here is where I am at:
-![image](https://github.com/user-attachments/assets/c9b2598e-b947-43f5-a808-78d3188ec3da)
 
