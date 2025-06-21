@@ -145,4 +145,3 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 <img src="Progress Images/Claw_Top.png" width="400"/>
 <img src="Progress Images/Claw_Bottom.png" width="400"/>
 <img src="Progress Images/Arm_Assembly.png" width="400"/>
-
