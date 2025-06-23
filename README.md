@@ -62,7 +62,7 @@ The **Remote Assist Hand** is a robotic arm with a gripping hand that is able to
 [13]:https://www.amazon.com/10PCS-Rocker-Switch-Rectangle-Black/dp/B094FWYWL5/ref=pd_rhf_se_s_pd_sbs_rvi_d_sccl_2_3/140-6042190-5323536?pd_rd_w=4WVy0&content-id=amzn1.sym.6640a844-ab24-4352-ac9b-78899e683a5e&pf_rd_p=6640a844-ab24-4352-ac9b-78899e683a5e&pf_rd_r=DR52KG0H5RJ4PCX9CGEN&pd_rd_wg=gzPh0&pd_rd_r=7d525b38-a4b4-48b6-9cf1-d10f36e6cb2b&pd_rd_i=B094FWYWL5&th=1
 
 ### Notes on Purchasing and Shipping
-We want to purchase most of the parts from Amazon. We chose Amazon as our primary supplier because we have access to Amazon Prime (which has faster and free shipping). Some components, like the voltage regulators, were only available in multi packs, so the unit price listed is price of the whole pack. Also, we plan to use some of the parts, like the battery and voltage regulators, for our next project, so their cost is shared across multiple builds!
+We want to purchase most of the parts from Amazon. We chose Amazon as our primary supplier because we have access to Amazon Prime, which has faster and free shipping. The free shipping makes the packs cheaper than the singular alternatives at other sources. Some components, like the voltage regulators, were only available in multi packs, so the unit price listed is price of the whole pack. Also, we plan to use some of the parts, like the battery and voltage regulators, for our next project, so their cost is shared across multiple builds!
 
 ## How it Works
 1) Servo motors (controlled from a computer) move the arm and the gripper to **hold an object**,
