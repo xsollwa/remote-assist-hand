@@ -156,4 +156,12 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 *Ruzanna*
 - Today I organised the folders of the repository, converted BOM to its necessary format, and double-triple checked meeting all the highway submission requirements, making the necessary tweaks!
 
+### June 24, 2025 - 7 hours
+
+**What we did**
+
+*Philip*
+- Today I designed and implemented the complete web-based control interface for the robotic hand. First, I wrote the HTML, CSS, and JavaScript UI that the ESP32 will serve to a browser, adding buttons for each joint and a live force readout. Next, I encapsulated that interface in a main_page.h header using PROGMEM so the ESP32 can efficiently host it. Finally, I developed the Arduino sketch: it connects to Wi-Fi, starts HTTP and WebSocket servers, parses JSON commands from the browser to drive the A4988 stepper and four servos, and periodically reads the HX711 amplifier to convert the raw load-cell output into newtons and stream it back to the client in real time. Below is a pricture of HTML webpage.
+<img src="Progress Images/Arm_Control_Webpage.png" width="400"/>
+
 
