@@ -4,10 +4,10 @@ Authors: "Ruzanna Gaboyan and Philip Golczak"
 Description: "For this project we are creating a robotic arm with a gripper hand which will have a pneumatic haptic feedback system"
 Created_At: "2025-05-28"
 ---
-# Total time spent (On design): 48 hours
+# Total time spent (On design): 65 hours
 **Ruzanna**: 13 hours
 
-**Philip**: 45 hours
+**Philip**: 52 hours
 
 ### May 27, 2025 - 2 hours
 
@@ -156,12 +156,15 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 *Ruzanna*
 - Today I organised the folders of the repository, converted BOM to its necessary format, and double-triple checked meeting all the highway submission requirements, making the necessary tweaks!
 
-### June 24, 2025 - 7 hours
+### June 24, 2025 - 8 hours
 
 **What we did**
 
 *Philip*
-- Today I designed and implemented the complete web-based control interface for the robotic hand. First, I wrote the HTML, CSS, and JavaScript UI that the ESP32 will serve to a browser, adding buttons for each joint and a live force readout. Next, I encapsulated that interface in a main_page.h header using PROGMEM so the ESP32 can efficiently host it. Finally, I developed the Arduino sketch: it connects to Wi-Fi, starts HTTP and WebSocket servers, parses JSON commands from the browser to drive the A4988 stepper and four servos, and periodically reads the HX711 amplifier to convert the raw load-cell output into newtons and stream it back to the client in real time. Below is a pricture of HTML webpage.
+- Today I designed and implemented the complete web-based control interface for the robotic hand. First, I wrote the HTML, CSS, and JavaScript UI that the ESP32 will serve to a browser, adding buttons for each joint and a live force readout. Next, I encapsulated that interface in a main_page.h header using PROGMEM so the ESP32 can efficiently host it. Finally, I developed the Arduino sketch: it connects to Wi-Fi, starts HTTP and WebSocket servers, parses JSON commands from the browser to drive the A4988 stepper and four servos, and periodically reads the HX711 amplifier to convert the raw load-cell output into newtons and stream it back to the client in real time. Below is a pricture of the HTML webpage.
 <img src="Progress Images/Arm_Control_Webpage.png" width="400"/>
+
+- I completed the overview wiring diagram, which shows how all the electrical components, except those inside the PCB whose wiring is detailed in how the schematic, will be connected. Most notably, it shows how the four wires from the load cell will connect to the amplifier, which was previously not shown in the schematic.
+<img src="Progress Images/Wiring_Diagram.png" width="400"/>
 
 
