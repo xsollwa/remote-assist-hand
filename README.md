@@ -71,7 +71,9 @@ We want to purchase most of the parts from Amazon. We chose Amazon as our primar
 4) The computer **displays the pressure**, helping the user understand how hard the robot is gripping.
 
 ## Pictures 
+
 **Overview Wiring Diagram**
+
 <img src="Progress Images/Wiring_Diagram.png" width="400"/>
 
 **PCB**
