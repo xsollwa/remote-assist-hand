@@ -12,7 +12,7 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "C:\\Hapatic_Feedback\\remote-assist-hand\\Code\\VICTOR",
+                "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND",
                 "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.4-2f7dcd86-v1\\esp32\\qio_qspi\\include",
                 "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\cores\\esp32",
                 "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\variants\\esp32da",

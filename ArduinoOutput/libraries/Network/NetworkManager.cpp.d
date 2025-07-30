@@ -1,4 +1,4 @@
-C:\Hapatic_Feedback\remote-assist-hand\ArduinoOutput\libraries\Network\NetworkManager.cpp.o: \
+C:\Users\golcz\remote-assist-hand\ArduinoOutput\libraries\Network\NetworkManager.cpp.o: \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\Network\src\NetworkManager.cpp \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\Network\src\NetworkManager.h \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\Network\src\NetworkEvents.h \

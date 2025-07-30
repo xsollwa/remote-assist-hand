@@ -1,4 +1,4 @@
-#line 1 "C:\\Hapatic_Feedback\\remote-assist-hand\\Code\\VICTOR\\main_page.h"
+#line 1 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\main_page.h"
 #pragma once
 #include <pgmspace.h>
 

@@ -1,4 +1,4 @@
-C:\Hapatic_Feedback\remote-assist-hand\ArduinoOutput\libraries\FS\vfs_api.cpp.o: \
+C:\Users\golcz\remote-assist-hand\ArduinoOutput\libraries\FS\vfs_api.cpp.o: \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\FS\src\vfs_api.cpp \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\FS\src\vfs_api.h \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\FS\src\FS.h \

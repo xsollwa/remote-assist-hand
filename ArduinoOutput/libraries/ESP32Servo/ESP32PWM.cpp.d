@@ -1,4 +1,4 @@
-C:\Hapatic_Feedback\remote-assist-hand\ArduinoOutput\libraries\ESP32Servo\ESP32PWM.cpp.o: \
+C:\Users\golcz\remote-assist-hand\ArduinoOutput\libraries\ESP32Servo\ESP32PWM.cpp.o: \
  C:\Users\golcz\OneDrive\Documents\Arduino\libraries\ESP32Servo\src\ESP32PWM.cpp \
  C:\Users\golcz\OneDrive\Documents\Arduino\libraries\ESP32Servo\src/ESP32PWM.h \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\cores\esp32/esp32-hal-ledc.h \

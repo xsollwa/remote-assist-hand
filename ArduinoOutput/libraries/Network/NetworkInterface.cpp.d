@@ -1,4 +1,4 @@
-C:\Hapatic_Feedback\remote-assist-hand\ArduinoOutput\libraries\Network\NetworkInterface.cpp.o: \
+C:\Users\golcz\remote-assist-hand\ArduinoOutput\libraries\Network\NetworkInterface.cpp.o: \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\Network\src\NetworkInterface.cpp \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.2.0\libraries\Network\src\NetworkInterface.h \
  C:\Users\golcz\AppData\Local\Arduino15\packages\esp32\tools\esp32-arduino-libs\idf-release_v5.4-2f7dcd86-v1\esp32/include/esp_netif/include/esp_netif_types.h \

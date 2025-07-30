@@ -1,4 +1,4 @@
-C:\Hapatic_Feedback\remote-assist-hand\ArduinoOutput\libraries\ESP32Servo\ESP32Servo.cpp.o: \
+C:\Users\golcz\remote-assist-hand\ArduinoOutput\libraries\ESP32Servo\ESP32Servo.cpp.o: \
  C:\Users\golcz\OneDrive\Documents\Arduino\libraries\ESP32Servo\src\ESP32Servo.cpp \
  C:\Users\golcz\OneDrive\Documents\Arduino\libraries\ESP32Servo\src/ESP32Servo.h \
  C:\Users\golcz\OneDrive\Documents\Arduino\libraries\ESP32Servo\src/ESP32PWM.h \

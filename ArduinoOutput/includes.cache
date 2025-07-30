@@ -10,52 +10,52 @@
     "Includepath": "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\variants\\esp32da"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "WiFi.h",
     "Includepath": "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\libraries\\WiFi\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "Network.h",
     "Includepath": "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\libraries\\Network\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "ESPAsyncWebServer.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\ESPAsyncWebServer\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "FS.h",
     "Includepath": "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\libraries\\FS\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "AsyncTCP.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\AsyncTCP\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "ArduinoJson.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\ArduinoJson\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "AccelStepper.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\AccelStepper\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "ESP32Servo.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\ESP32Servo\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "HX711.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\HX711_Arduino_Library\\src"
   },
   {
-    "Sourcefile": "C:\\Hapatic_Feedback\\remote-assist-hand\\ArduinoOutput\\sketch\\VICTOR.ino.cpp",
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "",
     "Includepath": null
   },
