@@ -30,16 +30,24 @@ AsyncWebSocket  ws("/ws");
 // motion params
 const float STEPPER_MAX_SPEED    = 800.0;
 const float STEPPER_ACCELERATION = 200.0;
-const float SERVO_MAX_ANGLE      = 270.0;
-const float SERVO_SMOOTHING      = 0.05;   // 0.0 = no smoothing, 1.0 = snap
-const float SERVO_MOVE_SPEED     = 60.0;   // deg/sec when button held
+const float SERVO_SMOOTHING      = 0.05;   // 0=no filter, 1=instant
+const float SERVO_MOVE_SPEED     = 60.0;   // deg/sec when held
+
+// safe motion limits (degrees)
+const float SHOULDER_MIN_ANG = 30.0;
+const float SHOULDER_MAX_ANG = 150.0;
+const float ELBOW_MIN_ANG    = 0.0;
+const float ELBOW_MAX_ANG    = 135.0;
+const float WRIST_MIN_ANG    = 10.0;
+const float WRIST_MAX_ANG    = 160.0;
+const float GRASPER_MIN_ANG  = 20.0;
+const float GRASPER_MAX_ANG  = 100.0;
 
 // force sensor
 float       FORCE_CALIBRATION    = 1.0;
 const unsigned long FORCE_INTERVAL = 200;
-unsigned long lastForceTime = 0;
 
-// hardware objects
+// hardware
 AccelStepper baseStepper(AccelStepper::DRIVER, STEPPER_STEP_PIN, STEPPER_DIR_PIN);
 Servo        shoulder, elbow, wrist, grasper;
 HX711        scale;
@@ -50,26 +58,25 @@ float elbowAngle          = 90, targetElbowAngle    = 90;
 float wristAngle          = 90, targetWristAngle    = 90;
 float grasperAngle        = 90, targetGrasperAngle  = 90;
 
-// servo velocities
+// velocities (deg/sec)
 float shoulderSpeed = 0, elbowSpeed = 0, wristSpeed = 0, grasperSpeed = 0;
 
-//––– smoothing + pulse write –––––––––––––––––––––––––––––––––––––––––––––
-void updateServo(Servo &servo, float &cur, float tgt) {
+//––– smoothing + pulse write with per-servo limits –––––––––––––––––––––––––
+void updateServo(Servo &servo, float &cur, float tgt, float minA, float maxA) {
   cur += (tgt - cur) * SERVO_SMOOTHING;
-  float a = constrain(cur, 0.0, SERVO_MAX_ANGLE);
-  servo.writeMicroseconds(map((int)a, 0, (int)SERVO_MAX_ANGLE, 500, 2500));
+  float a = constrain(cur, minA, maxA);
+  int us = map((int)a, (int)minA, (int)maxA, 500, 2500);
+  servo.writeMicroseconds(us);
 }
 
 //––– WS command handlers –––––––––––––––––––––––––––––––––––––––––––––––––
 void handleMotorCommand(const String &motor, const String &dir) {
   if (motor == "base_stepper") {
-    baseStepper.setSpeed(dir=="cw" ?  STEPPER_MAX_SPEED
-                                   : -STEPPER_MAX_SPEED);
+    baseStepper.setSpeed(dir=="cw"? +STEPPER_MAX_SPEED : -STEPPER_MAX_SPEED);
     return;
   }
-  // servo: set velocity
   float v = (dir=="cw"? +SERVO_MOVE_SPEED : -SERVO_MOVE_SPEED);
-  if (motor=="shoulder_servo") shoulderSpeed = v;
+  if      (motor=="shoulder_servo") shoulderSpeed = v;
   else if (motor=="elbow_servo")    elbowSpeed    = v;
   else if (motor=="wrist_servo")    wristSpeed    = v;
   else if (motor=="grasper_servo")  grasperSpeed  = v;
@@ -80,119 +87,92 @@ void handleMotorStop(const String &motor) {
     baseStepper.setSpeed(0);
     return;
   }
-  // zero velocity + freeze target
-  if (motor=="shoulder_servo") {
-    shoulderSpeed = 0;
-    targetShoulderAngle = shoulderAngle;
-  }
-  else if (motor=="elbow_servo") {
-    elbowSpeed = 0;
-    targetElbowAngle = elbowAngle;
-  }
-  else if (motor=="wrist_servo") {
-    wristSpeed = 0;
-    targetWristAngle = wristAngle;
-  }
-  else if (motor=="grasper_servo") {
-    grasperSpeed = 0;
-    targetGrasperAngle = grasperAngle;
-  }
+  if      (motor=="shoulder_servo") { shoulderSpeed = 0; targetShoulderAngle = shoulderAngle; }
+  else if (motor=="elbow_servo")    { elbowSpeed    = 0; targetElbowAngle    = elbowAngle;    }
+  else if (motor=="wrist_servo")    { wristSpeed    = 0; targetWristAngle    = wristAngle;    }
+  else if (motor=="grasper_servo")  { grasperSpeed  = 0; targetGrasperAngle  = grasperAngle;  }
 }
 
 void onWebSocketEvent(AsyncWebSocket *s, AsyncWebSocketClient *c,
                       AwsEventType type, void *arg,
                       uint8_t *data, size_t len) {
   if (type!=WS_EVT_DATA) return;
-  auto *info = (AwsFrameInfo*)arg;
+  AwsFrameInfo *info = (AwsFrameInfo*)arg;
   if (!info->final || info->opcode!=WS_TEXT) return;
-
   String msg((char*)data, len);
   StaticJsonDocument<256> doc;
   if (deserializeJson(doc, msg)) return;
-  String t   = doc["type"],
-         m   = doc["motor"],
-         dir = doc["dir"];
+  String t = doc["type"], m = doc["motor"], dir = doc["dir"];
   if (t=="move") handleMotorCommand(m, dir);
-  else          handleMotorStop(m);
+  else           handleMotorStop(m);
 }
 
-//––– stepper runner on core 0, low prio –––––––––––––––––––––––––––––––––––
-void stepperTask(void*){
+//––– stepper runner on core 0 (prio 0) –––––––––––––––––––––––––––––––––––––
+void stepperTask(void*) {
   for(;;) baseStepper.runSpeed();
 }
 
-//––– servo velocity+smoothing @50Hz on core 0, high prio –––––––––––––––––
-void servoTask(void*){
+//––– servo velocity + smoothing @50Hz on core 0 (prio 1) –––––––––––––––––
+void servoTask(void*) {
   const TickType_t period = pdMS_TO_TICKS(20);
   TickType_t lastWake = xTaskGetTickCount();
   const float dt = 20.0f/1000.0f;
+  for (;;) {
+    targetShoulderAngle = constrain(targetShoulderAngle + shoulderSpeed*dt, SHOULDER_MIN_ANG, SHOULDER_MAX_ANG);
+    targetElbowAngle    = constrain(targetElbowAngle    + elbowSpeed*dt,    ELBOW_MIN_ANG,    ELBOW_MAX_ANG);
+    targetWristAngle    = constrain(targetWristAngle    + wristSpeed*dt,    WRIST_MIN_ANG,    WRIST_MAX_ANG);
+    targetGrasperAngle  = constrain(targetGrasperAngle  + grasperSpeed*dt,  GRASPER_MIN_ANG,  GRASPER_MAX_ANG);
 
-  for(;;){
-    // advance targets by velocity
-    targetShoulderAngle = constrain(targetShoulderAngle + shoulderSpeed*dt, 0.0, SERVO_MAX_ANGLE);
-    targetElbowAngle    = constrain(targetElbowAngle    + elbowSpeed*dt,    0.0, SERVO_MAX_ANGLE);
-    targetWristAngle    = constrain(targetWristAngle    + wristSpeed*dt,    0.0, SERVO_MAX_ANGLE);
-    targetGrasperAngle  = constrain(targetGrasperAngle  + grasperSpeed*dt,  0.0, SERVO_MAX_ANGLE);
-
-    // apply smoothing & write
-    updateServo(shoulder, shoulderAngle,       targetShoulderAngle);
-    updateServo(elbow,    elbowAngle,          targetElbowAngle);
-    updateServo(wrist,    wristAngle,          targetWristAngle);
-    updateServo(grasper,  grasperAngle,        targetGrasperAngle);
+    updateServo(shoulder, shoulderAngle,       targetShoulderAngle, SHOULDER_MIN_ANG, SHOULDER_MAX_ANG);
+    updateServo(elbow,    elbowAngle,          targetElbowAngle,    ELBOW_MIN_ANG,    ELBOW_MAX_ANG);
+    updateServo(wrist,    wristAngle,          targetWristAngle,    WRIST_MIN_ANG,    WRIST_MAX_ANG);
+    updateServo(grasper,  grasperAngle,        targetGrasperAngle,  GRASPER_MIN_ANG,  GRASPER_MAX_ANG);
 
     vTaskDelayUntil(&lastWake, period);
   }
 }
 
-void setup(){
-  Serial.begin(115200);
+//––– force‐streaming on core 1 (prio 1) –––––––––––––––––––––––––––––––––––––
+void forceTask(void*) {
+  const TickType_t period = pdMS_TO_TICKS(FORCE_INTERVAL);
+  TickType_t lastWake = xTaskGetTickCount();
+  for (;;) {
+    float raw = scale.get_units(5);
+    float force = raw * FORCE_CALIBRATION;
+    StaticJsonDocument<128> doc;
+    doc["type"]="force"; doc["motor"]="grasper_servo"; doc["force"]=force;
+    String out; serializeJson(doc,out); ws.textAll(out);
+    vTaskDelayUntil(&lastWake, period);
+  }
+}
 
-  // stepper init
+void setup() {
+  Serial.begin(115200);
   pinMode(STEPPER_RST_PIN, OUTPUT);
   digitalWrite(STEPPER_RST_PIN, HIGH);
   delay(100);
   baseStepper.setMaxSpeed(STEPPER_MAX_SPEED);
   baseStepper.setAcceleration(STEPPER_ACCELERATION);
 
-  // attach servos
-  shoulder.attach(SHOULDER_PIN, 500, 2500);
-  elbow.attach(ELBOW_PIN,       500, 2500);
-  wrist.attach(WRIST_PIN,       500, 2500);
-  grasper.attach(GRASPER_PIN,   500, 2500);
+  shoulder.attach(SHOULDER_PIN,500,2500);
+  elbow.attach(ELBOW_PIN,500,2500);
+  wrist.attach(WRIST_PIN,500,2500);
+  grasper.attach(GRASPER_PIN,500,2500);
 
-  // Wi-Fi + server
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  while (WiFi.status()!=WL_CONNECTED) delay(500);
-
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest *r){
-    r->send_P(200, "text/html", MAIN_PAGE);
-  });
+  WiFi.mode(WIFI_STA); WiFi.begin(ssid,password);
+  while(WiFi.status()!=WL_CONNECTED) delay(500);
+  server.on("/",HTTP_GET,[](AsyncWebServerRequest*r){ r->send_P(200,"text/html",MAIN_PAGE); });
   ws.onEvent(onWebSocketEvent);
-  server.addHandler(&ws);
-  server.begin();
+  server.addHandler(&ws); server.begin();
 
-  // HX711
-  scale.begin(HX711_DT_PIN, HX711_SCK_PIN);
-  scale.set_scale(1.0);
-  scale.tare();
+  scale.begin(HX711_DT_PIN,HX711_SCK_PIN);
+  scale.set_scale(1.0); scale.tare();
 
-  // motor tasks on core 0
-  xTaskCreatePinnedToCore(stepperTask, "stepperTask", 1000, nullptr, 0, nullptr, 0);
-  xTaskCreatePinnedToCore(servoTask,   "servoTask",   2048, nullptr, 1, nullptr, 0);
+  xTaskCreatePinnedToCore(stepperTask,"stepper",1000,nullptr,0,nullptr,0);
+  xTaskCreatePinnedToCore(servoTask,  "servo",  2048,nullptr,1,nullptr,0);
+  xTaskCreatePinnedToCore(forceTask,  "force",  2048,nullptr,1,nullptr,1);
 }
 
-void loop(){
-  // only force broadcasts
-  if (millis() - lastForceTime >= FORCE_INTERVAL) {
-    lastForceTime = millis();
-    float raw   = scale.get_units(5);
-    float force = raw * FORCE_CALIBRATION;
-    StaticJsonDocument<128> doc;
-    doc["type"]  = "force";
-    doc["motor"] = "grasper_servo";
-    doc["force"] = force;
-    String out; serializeJson(doc, out);
-    ws.textAll(out);
-  }
+void loop() {
+  delay(1000);
 }
