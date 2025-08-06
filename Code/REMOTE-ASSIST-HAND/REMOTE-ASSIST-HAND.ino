@@ -111,15 +111,22 @@ void handleMotorStop(const String &motor) {
 void onWebSocketEvent(AsyncWebSocket *s, AsyncWebSocketClient *c,
                       AwsEventType type, void *arg,
                       uint8_t *data, size_t len) {
-  if (type!=WS_EVT_DATA) return;
-  AwsFrameInfo *info = (AwsFrameInfo*)arg;
-  if (!info->final || info->opcode!=WS_TEXT) return;
-  String msg((char*)data, len);
-  StaticJsonDocument<256> doc;
-  if (deserializeJson(doc, msg)) return;
-  String t = doc["type"], m = doc["motor"], dir = doc["dir"];
-  if (t=="move") handleMotorCommand(m, dir);
-  else             handleMotorStop(m);
+  if (type == WS_EVT_CONNECT) {
+    Serial.printf("[WS] Client %u connected\n", c->id());
+  }
+  else if (type == WS_EVT_DISCONNECT) {
+    Serial.printf("[WS] Client %u disconnected\n", c->id());
+  }
+  else if (type == WS_EVT_DATA) {
+    AwsFrameInfo *info = (AwsFrameInfo*)arg;
+    if (!info->final || info->opcode!=WS_TEXT) return;
+    String msg((char*)data, len);
+    StaticJsonDocument<256> doc;
+    if (deserializeJson(doc, msg)) return;
+    String t = doc["type"], m = doc["motor"], dir = doc["dir"];
+    if (t=="move")      handleMotorCommand(m, dir);
+    else /*stop*/       handleMotorStop(m);
+  }
 }
 
 //––– stepper runner on core 0 (prio 0) –––––––––––––––––––––––––––––––––––––
@@ -147,19 +154,38 @@ void servoTask(void*) {
   }
 }
 
-//––– force‐streaming on core 1 (prio 1) –––––––––––––––––––––––––––––––––––––
+//––– force‐streaming on core 1 (prio 1) with “I’m alive” heartbeat –––––
 void forceTask(void*) {
   const TickType_t period = pdMS_TO_TICKS(FORCE_INTERVAL);
   TickType_t lastWake = xTaskGetTickCount();
+  int aliveCounter = 0;
+
   for (;;) {
-    float raw = scale.get_units(5);
+    float raw   = scale.get_units(5);
     float force = raw * FORCE_CALIBRATION;
+
+    // send force over WS
     StaticJsonDocument<128> doc;
-    doc["type"]="force"; doc["motor"]="grasper_servo"; doc["force"]=force;
-    String out; serializeJson(doc,out); ws.textAll(out);
+    doc["type"]="force";
+    doc["motor"]="grasper_servo";
+    doc["force"]=force;
+    String out; serializeJson(doc,out);
+    ws.textAll(out);
+
+    // heartbeat every ~10 s
+    if (++aliveCounter >= 50) {
+      StaticJsonDocument<64> hb;
+      hb["type"]  = "heartbeat";
+      hb["force"] = force;
+      String j; serializeJson(hb, j);
+      ws.textAll(j);
+      aliveCounter = 0;
+    }
+
     vTaskDelayUntil(&lastWake, period);
   }
 }
+
 
 void setup() {
   Serial.begin(115200);

@@ -98,15 +98,22 @@ const char MAIN_PAGE[] PROGMEM = R"rawliteral(
     function onMessage(event) {
       try {
         const data = JSON.parse(event.data);
-        if (data.type === 'force' && data.motor === 'grasper_servo') {
-          document.getElementById('force-display').textContent = `Force: ${data.force.toFixed(2)} N`;
-        } else {
+
+        if (data.type === 'force') {
+          document.getElementById('force-display')
+                  .textContent = `Force: ${data.force.toFixed(2)} N`;
+        }
+        else if (data.type === 'heartbeat') {
+          console.log(`[HB] force=${data.force.toFixed(2)} N`);
+        }
+        else {
           console.log('Received:', data);
         }
       } catch (e) {
         console.error('Invalid message:', event.data);
       }
     }
+
 
     function startMotor(motor, dir) {
       if (websocket && websocket.readyState === WebSocket.OPEN) {
