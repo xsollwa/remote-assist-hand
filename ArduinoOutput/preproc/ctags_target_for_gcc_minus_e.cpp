@@ -100,6 +100,7 @@ void handleMotorStop(const String &motor) {
   }
 }
 
+//––– WebSocket events with connect/disconnect logs ––––––––––––––––––––
 void onWebSocketEvent(AsyncWebSocket *s, AsyncWebSocketClient *c,
                       AwsEventType type, void *arg,
                       uint8_t *data, size_t len) {
@@ -121,25 +122,29 @@ void onWebSocketEvent(AsyncWebSocket *s, AsyncWebSocketClient *c,
   }
 }
 
-//––– stepper runner on core 0 (prio 0) –––––––––––––––––––––––––––––––––––––
+//––– stepper runner on core 0 (prio 0) –––––––––––––––––––––––––––––––
 void stepperTask(void*) {
   for(;;) baseStepper.runSpeed();
 }
 
-//––– servo velocity + smoothing @50Hz on core 0 (prio 1) –––––––––––––––––
+//––– servo velocity + smoothing @50Hz on core 0 (prio 1) –––––––––––––
 void servoTask(void*) {
   const TickType_t period = ( ( TickType_t ) ( ( ( TickType_t ) ( 20 ) * ( TickType_t ) 
-# 139 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino" 3
+# 140 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino" 3
                            1000 
-# 139 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino"
+# 140 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino"
                            ) / ( TickType_t ) 1000U ) );
   TickType_t lastWake = xTaskGetTickCount();
   const float dt = 20.0f/1000.0f;
   for (;;) {
-    targetShoulderAngle = ((targetShoulderAngle + shoulderSpeed*dt) < (SHOULDER_MIN_ANG) ? (SHOULDER_MIN_ANG) : ((targetShoulderAngle + shoulderSpeed*dt) > (SHOULDER_MAX_ANG) ? (SHOULDER_MAX_ANG) : (targetShoulderAngle + shoulderSpeed*dt)));
-    targetElbowAngle = ((targetElbowAngle + elbowSpeed*dt) < (ELBOW_MIN_ANG) ? (ELBOW_MIN_ANG) : ((targetElbowAngle + elbowSpeed*dt) > (ELBOW_MAX_ANG) ? (ELBOW_MAX_ANG) : (targetElbowAngle + elbowSpeed*dt)));
-    targetWristAngle = ((targetWristAngle + wristSpeed*dt) < (WRIST_MIN_ANG) ? (WRIST_MIN_ANG) : ((targetWristAngle + wristSpeed*dt) > (WRIST_MAX_ANG) ? (WRIST_MAX_ANG) : (targetWristAngle + wristSpeed*dt)));
-    targetGrasperAngle = ((targetGrasperAngle + grasperSpeed*dt) < (GRASPER_MIN_ANG) ? (GRASPER_MIN_ANG) : ((targetGrasperAngle + grasperSpeed*dt) > (GRASPER_MAX_ANG) ? (GRASPER_MAX_ANG) : (targetGrasperAngle + grasperSpeed*dt)));
+    targetShoulderAngle = ((targetShoulderAngle + shoulderSpeed*dt) < (SHOULDER_MIN_ANG) ? (SHOULDER_MIN_ANG) : ((targetShoulderAngle + shoulderSpeed*dt) > (SHOULDER_MAX_ANG) ? (SHOULDER_MAX_ANG) : (targetShoulderAngle + shoulderSpeed*dt)))
+                                                                       ;
+    targetElbowAngle = ((targetElbowAngle + elbowSpeed*dt) < (ELBOW_MIN_ANG) ? (ELBOW_MIN_ANG) : ((targetElbowAngle + elbowSpeed*dt) > (ELBOW_MAX_ANG) ? (ELBOW_MAX_ANG) : (targetElbowAngle + elbowSpeed*dt)))
+                                                                    ;
+    targetWristAngle = ((targetWristAngle + wristSpeed*dt) < (WRIST_MIN_ANG) ? (WRIST_MIN_ANG) : ((targetWristAngle + wristSpeed*dt) > (WRIST_MAX_ANG) ? (WRIST_MAX_ANG) : (targetWristAngle + wristSpeed*dt)))
+                                                                    ;
+    targetGrasperAngle = ((targetGrasperAngle + grasperSpeed*dt) < (GRASPER_MIN_ANG) ? (GRASPER_MIN_ANG) : ((targetGrasperAngle + grasperSpeed*dt) > (GRASPER_MAX_ANG) ? (GRASPER_MAX_ANG) : (targetGrasperAngle + grasperSpeed*dt)))
+                                                                      ;
 
     updateServo(shoulder, shoulderAngle, targetShoulderAngle, SHOULDER_MIN_ANG, SHOULDER_MAX_ANG);
     updateServo(elbow, elbowAngle, targetElbowAngle, ELBOW_MIN_ANG, ELBOW_MAX_ANG);
@@ -150,12 +155,12 @@ void servoTask(void*) {
   }
 }
 
-//––– force‐streaming on core 1 (prio 1) with “I’m alive” heartbeat –––––
+//––– force‐streaming on core 1 (prio 1) with “I’m alive” heartbeat & ping –––––
 void forceTask(void*) {
   const TickType_t period = ( ( TickType_t ) ( ( ( TickType_t ) ( FORCE_INTERVAL ) * ( TickType_t ) 
-# 159 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino" 3
+# 164 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino" 3
                            1000 
-# 159 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino"
+# 164 "C:\\Users\\golcz\\remote-assist-hand\\Code\\REMOTE-ASSIST-HAND\\REMOTE-ASSIST-HAND.ino"
                            ) / ( TickType_t ) 1000U ) );
   TickType_t lastWake = xTaskGetTickCount();
   int aliveCounter = 0;
@@ -166,9 +171,9 @@ void forceTask(void*) {
 
     // send force over WS
     StaticJsonDocument<128> doc;
-    doc["type"]="force";
-    doc["motor"]="grasper_servo";
-    doc["force"]=force;
+    doc["type"] = "force";
+    doc["motor"] = "grasper_servo";
+    doc["force"] = force;
     String out; serializeJson(doc,out);
     ws.textAll(out);
 
@@ -179,13 +184,13 @@ void forceTask(void*) {
       hb["force"] = force;
       String j; serializeJson(hb, j);
       ws.textAll(j);
+      ws.pingAll(); // send WebSocket ping
       aliveCounter = 0;
     }
 
     do { ( void ) xTaskDelayUntil( ( &lastWake ), ( period ) ); } while( 0 );
   }
 }
-
 
 void setup() {
   Serial0.begin(115200);
@@ -202,38 +207,62 @@ void setup() {
 
   prefs.begin("servo", false);
   // load last or default to midpoint
-  targetShoulderAngle = prefs.getFloat("shAng", (SHOULDER_MIN_ANG+SHOULDER_MAX_ANG)/2);
+  targetShoulderAngle = prefs.getFloat("shAng",
+    (SHOULDER_MIN_ANG+SHOULDER_MAX_ANG)/2);
   shoulderAngle = targetShoulderAngle;
   shoulder.writeMicroseconds(
-    map((int)shoulderAngle, (int)SHOULDER_MIN_ANG, (int)SHOULDER_MAX_ANG, 500,2500)
+    map((int)shoulderAngle, (int)SHOULDER_MIN_ANG,
+        (int)SHOULDER_MAX_ANG, 500,2500)
   );
-  targetElbowAngle = prefs.getFloat("elAng", (ELBOW_MIN_ANG+ELBOW_MAX_ANG)/2);
+  targetElbowAngle = prefs.getFloat("elAng",
+    (ELBOW_MIN_ANG+ELBOW_MAX_ANG)/2);
   elbowAngle = targetElbowAngle;
   elbow.writeMicroseconds(
-    map((int)elbowAngle, (int)ELBOW_MIN_ANG, (int)ELBOW_MAX_ANG, 500,2500)
+    map((int)elbowAngle, (int)ELBOW_MIN_ANG,
+        (int)ELBOW_MAX_ANG, 500,2500)
   );
-  targetWristAngle = prefs.getFloat("wrAng", (WRIST_MIN_ANG+WRIST_MAX_ANG)/2);
+  targetWristAngle = prefs.getFloat("wrAng",
+    (WRIST_MIN_ANG+WRIST_MAX_ANG)/2);
   wristAngle = targetWristAngle;
   wrist.writeMicroseconds(
-    map((int)wristAngle, (int)WRIST_MIN_ANG, (int)WRIST_MAX_ANG, 500,2500)
+    map((int)wristAngle, (int)WRIST_MIN_ANG,
+        (int)WRIST_MAX_ANG, 500,2500)
   );
-  targetGrasperAngle = prefs.getFloat("grAng", (GRASPER_MIN_ANG+GRASPER_MAX_ANG)/2);
+  targetGrasperAngle = prefs.getFloat("grAng",
+    (GRASPER_MIN_ANG+GRASPER_MAX_ANG)/2);
   grasperAngle = targetGrasperAngle;
   grasper.writeMicroseconds(
-    map((int)grasperAngle, (int)GRASPER_MIN_ANG, (int)GRASPER_MAX_ANG, 500,2500)
+    map((int)grasperAngle, (int)GRASPER_MIN_ANG,
+        (int)GRASPER_MAX_ANG, 500,2500)
   );
 
-  WiFi.mode(WIFI_MODE_STA); WiFi.begin(ssid,password);
+  WiFi.mode(WIFI_MODE_STA);
+  WiFi.begin(ssid,password);
   while(WiFi.status()!=WL_CONNECTED) delay(500);
-  server.on("/",HTTP_GET,[](AsyncWebServerRequest*r){ r->send_P(200,"text/html",MAIN_PAGE); });
-  ws.onEvent(onWebSocketEvent); server.addHandler(&ws); server.begin();
 
-  scale.begin(18,19);
-  scale.set_scale(1.0); scale.tare();
+  // serve main page
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *r){
+    r->send_P(200, "text/html", MAIN_PAGE);
+  });
 
-  xTaskCreatePinnedToCore(stepperTask,"stepper",1000,nullptr,0,nullptr,0);
-  xTaskCreatePinnedToCore(servoTask, "servo", 2048,nullptr,1,nullptr,0);
-  xTaskCreatePinnedToCore(forceTask, "force", 2048,nullptr,1,nullptr,1);
+  // silence favicon errors
+  server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *r){
+    r->send(204);
+  });
+
+  // configure WebSocket
+  ws.onEvent(onWebSocketEvent);
+  server.addHandler(&ws);
+
+  server.begin();
+
+  scale.begin(18, 19);
+  scale.set_scale(1.0);
+  scale.tare();
+
+  xTaskCreatePinnedToCore(stepperTask, "stepper", 1000, nullptr, 0, nullptr, 0);
+  xTaskCreatePinnedToCore(servoTask, "servo", 2048, nullptr, 1, nullptr, 0);
+  xTaskCreatePinnedToCore(forceTask, "force", 2048, nullptr, 1, nullptr, 1);
 }
 
 void loop() {
