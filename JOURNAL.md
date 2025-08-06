@@ -4,10 +4,10 @@ Authors: "Ruzanna Gaboyan and Philip Golczak"
 Description: "For this project we are creating a robotic arm with a gripper hand which will have a pneumatic haptic feedback system"
 Created_At: "2025-05-28"
 ---
-# Total time spent (On design): 65 hours
-**Ruzanna**: 13 hours
+# Total time spent (On design): 101 hours
+**Ruzanna**: 23 hours
 
-**Philip**: 52 hours
+**Philip**: 78 hours
 
 ### May 27, 2025 - 2 hours
 
