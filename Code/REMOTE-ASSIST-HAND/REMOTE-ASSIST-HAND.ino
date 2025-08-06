@@ -5,6 +5,7 @@
 #include <AccelStepper.h>
 #include <ESP32Servo.h>
 #include <ESP32PWM.h>
+#include <Preferences.h>
 #include "HX711.h"
 #include "main_page.h"
 
@@ -51,12 +52,13 @@ const unsigned long FORCE_INTERVAL = 200;
 AccelStepper baseStepper(AccelStepper::DRIVER, STEPPER_STEP_PIN, STEPPER_DIR_PIN);
 Servo        shoulder, elbow, wrist, grasper;
 HX711        scale;
+Preferences  prefs;
 
 // angles & targets
-float shoulderAngle       = 90, targetShoulderAngle = 90;
-float elbowAngle          = 90, targetElbowAngle    = 90;
-float wristAngle          = 90, targetWristAngle    = 90;
-float grasperAngle        = 90, targetGrasperAngle  = 90;
+float shoulderAngle, targetShoulderAngle;
+float elbowAngle,    targetElbowAngle;
+float wristAngle,    targetWristAngle;
+float grasperAngle,  targetGrasperAngle;
 
 // velocities (deg/sec)
 float shoulderSpeed = 0, elbowSpeed = 0, wristSpeed = 0, grasperSpeed = 0;
@@ -87,10 +89,23 @@ void handleMotorStop(const String &motor) {
     baseStepper.setSpeed(0);
     return;
   }
-  if      (motor=="shoulder_servo") { shoulderSpeed = 0; targetShoulderAngle = shoulderAngle; }
-  else if (motor=="elbow_servo")    { elbowSpeed    = 0; targetElbowAngle    = elbowAngle;    }
-  else if (motor=="wrist_servo")    { wristSpeed    = 0; targetWristAngle    = wristAngle;    }
-  else if (motor=="grasper_servo")  { grasperSpeed  = 0; targetGrasperAngle  = grasperAngle;  }
+  if (motor=="shoulder_servo") {
+    shoulderSpeed = 0;
+    targetShoulderAngle = shoulderAngle;
+    prefs.putFloat("shAng", shoulderAngle);
+  } else if (motor=="elbow_servo") {
+    elbowSpeed = 0;
+    targetElbowAngle = elbowAngle;
+    prefs.putFloat("elAng", elbowAngle);
+  } else if (motor=="wrist_servo") {
+    wristSpeed = 0;
+    targetWristAngle = wristAngle;
+    prefs.putFloat("wrAng", wristAngle);
+  } else if (motor=="grasper_servo") {
+    grasperSpeed = 0;
+    targetGrasperAngle = grasperAngle;
+    prefs.putFloat("grAng", grasperAngle);
+  }
 }
 
 void onWebSocketEvent(AsyncWebSocket *s, AsyncWebSocketClient *c,
@@ -104,7 +119,7 @@ void onWebSocketEvent(AsyncWebSocket *s, AsyncWebSocketClient *c,
   if (deserializeJson(doc, msg)) return;
   String t = doc["type"], m = doc["motor"], dir = doc["dir"];
   if (t=="move") handleMotorCommand(m, dir);
-  else           handleMotorStop(m);
+  else             handleMotorStop(m);
 }
 
 //––– stepper runner on core 0 (prio 0) –––––––––––––––––––––––––––––––––––––
@@ -155,15 +170,37 @@ void setup() {
   baseStepper.setAcceleration(STEPPER_ACCELERATION);
 
   shoulder.attach(SHOULDER_PIN,500,2500);
-  elbow.attach(ELBOW_PIN,500,2500);
-  wrist.attach(WRIST_PIN,500,2500);
-  grasper.attach(GRASPER_PIN,500,2500);
+  elbow.attach(ELBOW_PIN,      500,2500);
+  wrist.attach(WRIST_PIN,      500,2500);
+  grasper.attach(GRASPER_PIN,  500,2500);
+
+  prefs.begin("servo", false);
+  // load last or default to midpoint
+  targetShoulderAngle = prefs.getFloat("shAng", (SHOULDER_MIN_ANG+SHOULDER_MAX_ANG)/2);
+  shoulderAngle       = targetShoulderAngle;
+  shoulder.writeMicroseconds(
+    map((int)shoulderAngle, (int)SHOULDER_MIN_ANG, (int)SHOULDER_MAX_ANG, 500,2500)
+  );
+  targetElbowAngle = prefs.getFloat("elAng", (ELBOW_MIN_ANG+ELBOW_MAX_ANG)/2);
+  elbowAngle       = targetElbowAngle;
+  elbow.writeMicroseconds(
+    map((int)elbowAngle, (int)ELBOW_MIN_ANG, (int)ELBOW_MAX_ANG, 500,2500)
+  );
+  targetWristAngle = prefs.getFloat("wrAng", (WRIST_MIN_ANG+WRIST_MAX_ANG)/2);
+  wristAngle       = targetWristAngle;
+  wrist.writeMicroseconds(
+    map((int)wristAngle, (int)WRIST_MIN_ANG, (int)WRIST_MAX_ANG, 500,2500)
+  );
+  targetGrasperAngle = prefs.getFloat("grAng", (GRASPER_MIN_ANG+GRASPER_MAX_ANG)/2);
+  grasperAngle       = targetGrasperAngle;
+  grasper.writeMicroseconds(
+    map((int)grasperAngle, (int)GRASPER_MIN_ANG, (int)GRASPER_MAX_ANG, 500,2500)
+  );
 
   WiFi.mode(WIFI_STA); WiFi.begin(ssid,password);
   while(WiFi.status()!=WL_CONNECTED) delay(500);
   server.on("/",HTTP_GET,[](AsyncWebServerRequest*r){ r->send_P(200,"text/html",MAIN_PAGE); });
-  ws.onEvent(onWebSocketEvent);
-  server.addHandler(&ws); server.begin();
+  ws.onEvent(onWebSocketEvent); server.addHandler(&ws); server.begin();
 
   scale.begin(HX711_DT_PIN,HX711_SCK_PIN);
   scale.set_scale(1.0); scale.tare();

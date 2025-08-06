@@ -51,6 +51,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
+    "Include": "Preferences.h",
+    "Includepath": "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\libraries\\Preferences\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\golcz\\remote-assist-hand\\ArduinoOutput\\sketch\\REMOTE-ASSIST-HAND.ino.cpp",
     "Include": "HX711.h",
     "Includepath": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\HX711_Arduino_Library\\src"
   },
@@ -226,6 +231,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\golcz\\OneDrive\\Documents\\Arduino\\libraries\\ESP32Servo\\src\\ESP32Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\golcz\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.2.0\\libraries\\Preferences\\src\\Preferences.cpp",
     "Include": "",
     "Includepath": null
   },
