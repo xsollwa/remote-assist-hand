@@ -167,4 +167,31 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - I completed the overview wiring diagram, which shows how all the electrical components, except those inside the PCB whose wiring is detailed in how the schematic, will be connected. Most notably, it shows how the four wires from the load cell will connect to the amplifier, which was previously not shown in the schematic.
 <img src="Progress Images/Wiring_Diagram.png" width="400"/>
 
+### July 5, 2025 - 10 hours
+
+**What we did**
+
+*Philip*
+- After our project was approved and the funding was secured, I ordered all the required components for the build. While waiting for the shipments to arrive, I 3D-printed all the structural parts for the arm. Once the components arrived, I assembled the robotic arm, including precise alignment of the joints, mounting the servos, and integrating the load-bearing sections. I also soldered and connected all electronic components to the custom PCB, ensuring proper routing and cable management. Below is a picture of the fully assembled arm:
+<img src="Progress Images/Complete_Arm.jpeg" width="400"/>
+
+### August 5, 2025 - 8 hours
+
+**What we did**
+
+*Philip*
+- I spent the day updating and refining the robotic arm’s control code. Throughout July, I had been intermittently working on improving the arm’s motion, but today I implemented several new features and focused on smoothing out the movements. I also added functionality that allows the arm to remember its last position and automatically return to it upon power-up, improving both usability and safety.
+
+### August 6, 2025 - 8 hours
+
+**What we did**
+
+*Philip*
+- Today I continued improving the control code, primarily focusing on calibrating the load cell to ensure accurate and stable readings. Unfortunately, during testing, one of the safety constraints on the grasper failed, causing it to over-rotate and break the load cell. I temporarily replaced it with a 3D-printed substitute (pictured below along with the damaged load cell).
+<img src="Progress Images/Broken_Load_Cell.jpeg" width="400"/>
+<img src="Progress Images/Replacement_Load_Cell.jpeg" width="400"/>
+
+- Despite the setback, I was able to correct the motion issues, complete testing, and successfully record a demonstration video, which is linked below.
+
+https://youtu.be/ImFqXYvcVdE
 
