@@ -96,7 +96,7 @@ We want to purchase most of the parts from Amazon. We chose Amazon as our primar
 5) Assembly and testing
 
 ## Journal
-Our full development journal can be found [here](./JOURNAL.md)
+Our full development journal can be found [here](./JOURNAL.md) (includes what we struggled with and what we learnt)
 
 ## Contact
 For any questions or suggestions please reach out to us at *gaboyanruzanna@gmail.com* or *ph.golczak@gmail.com* .
