@@ -175,6 +175,23 @@ https://youtu.be/5toNqaGsGYs?si=Z9oADLPzUGIuOL0S
 - After our project was approved and the funding was secured, I ordered all the required components for the build. While waiting for the shipments to arrive, I 3D-printed all the structural parts for the arm. Once the components arrived, I assembled the robotic arm, including precise alignment of the joints, mounting the servos, and integrating the load-bearing sections. I also soldered and connected all electronic components to the custom PCB, ensuring proper routing and cable management. Below is a picture of the fully assembled arm:
 <img src="Progress Images/Complete_Arm.jpeg" width="400"/>
 
+### July 10, 2025 - 3 hours
+
+*Ruzanna*
+- I worked on soldering electronics today! It was a bit tricky at first, but I’m getting better at making clean connections and figuring out where everything goes. I’m starting to feel more comfortable using the soldering tools and fixing little mistakes when something doesn’t connect right. This was my third soldering attempt!
+
+### July 11, 2025 - 4 hours
+
+*Ruzanna*
+- While we were waiting for Undercity to Kick-off, we decided to continue working on assembling the arm at GithubHQ! It was a fun and productive way to use the time and we really appreciated the peers who stopped by to check out our project and offer help. Their interest meant a lot and even helped us catch a couple of things we hadn’t noticed.
+  
+- After putting most of the arm together, we started testing and debugging our code for the arm, which was one of the most challenging phases of getting the arm to work. Even though the hardware was mostly in place, the arm didn’t move the way we expected at first. We had to go through the code, check how each motor was responding, and fix issues with timing and control signals. It took a lot of trial and error...
+
+<img width="374" height="380" alt="image" src="https://github.com/user-attachments/assets/da75740b-3d42-4caf-8547-baad3cbc6fbd" />
+
+<img width="274" height="380" alt="image" src="https://github.com/user-attachments/assets/6bafdf56-2be1-4e1f-a565-cebd5c53c796" />
+
+
 ### August 5, 2025 - 8 hours
 
 **What we did**
