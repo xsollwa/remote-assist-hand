@@ -5,7 +5,7 @@ Description: "For this project we are creating a robotic arm with a gripper hand
 Created_At: "2025-05-28"
 ---
 # Total time spent (On design): 101 hours
-**Ruzanna**: 23 hours
+**Ruzanna**: 30 hours
 
 **Philip**: 78 hours
 
