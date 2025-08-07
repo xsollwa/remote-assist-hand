@@ -3,6 +3,7 @@ A robotic hand with pressure sensing and haptic feedback communication
 
 **Created by:** Ruzanna Gaboyan and Philip Golczak  
 **Date:** May 28, 2025  
+**Demo:** https://youtu.be/ImFqXYvcVdE
 
 ## Overview
 The **Remote Assist Hand** is a robotic arm with a gripping hand that is able to sense how much pressure it feels when gripping and holding objects. It uses a load cell to measure this force and sends that information to a computer through an ESP32 microcontroller. Unlike most robotic arms, **Remote Assist Hand** can *sense physical resistance and communicate it back* to the user, which helps them to know how hard the robot is gripping without directly touching anything. 
