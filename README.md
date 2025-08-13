@@ -88,6 +88,10 @@ We want to purchase most of the parts from Amazon. We chose Amazon as our primar
 ![alt text](CAD/Images/Arm_Isometic_View.png)
 ![alt text](CAD/Images/Arm_Side_View.png)
 
+**Build IRL**
+![Complete_Arm (1)](https://github.com/user-attachments/assets/1896b7a7-525f-4dd5-a883-e3ce933a8cf5)
+
+
 ## Building Process
 1) Brainstorming and sketching
 2) PCB Design using KiCAD 
